@@ -43,10 +43,37 @@
     <!-- ================= MAIN CSS ================= -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+
 </head>
 <body>
 
 
+<!-- ================= HEADER / NAVIGATION ================= -->
+<header class="main-header">
+    <div class="container nav-container">
+       <div class="logo">
+    <img src="assets/images/vansh_logo.png" alt="Vansh Limited Logo">
+    <span class="logo-text">VANSH LIMITED</span>
+     </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#products-page">Products</a></li>
+                <li><a href="#">Industries</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#" class="nav-btn">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Mobile Menu  Toggle -->
+<div class="nav-toggle" id="navToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+    </div>
+</header>
 
 <!-- ================= VIDEO HERO ================= -->
 <section class="video-hero">
@@ -67,8 +94,7 @@
         </p>
 
         <div class="hero-actions">
-            <a href="#products" class="btn-primary">View Products</a>
-            <a href="contact.html" class="btn-outline">Request Quote</a>
+            <a href="#products-page" class="btn-primary">View Products</a>
         </div>
     </div>
 
@@ -78,75 +104,429 @@
     </div>
 </section>
 
-<main class="products-main">
-  <!-- Section Title -->
-  <h2 class="products-title">Our Products</h2>
+<section class="products-page">
 
-  <!-- Product Categories (Optional filter buttons) -->
-  <section class="product-categories">
-    <button class="category-btn active">All</button>
-    <button class="category-btn">Electronics</button>
-    <button class="category-btn">Apparel</button>
-    <button class="category-btn">Industrial</button>
-  </section>
+  <h2 class="products-page-title">OUR PRODUCTS</h2>
 
-  <!-- Products Grid -->
-  <section class="products-grid">
-    <!-- Product Card 1 -->
-    <div class="product-card">
-      <img src="assets/images/product1.jpg" alt="Premium Laptop">
-      <div class="product-info">
-        <h3>Premium Laptop</h3>
-        <p>High-performance laptop suitable for business and personal use, with sleek design and powerful specs.</p>
-        <a href="#" class="btn">View Product</a>
-      </div>
+  <!-- FILTER + SEARCH -->
+  <div class="products-controls">
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="masonry">Masonry</button>
+      <button class="filter-btn" data-filter="steel">Steel</button>
+      <button class="filter-btn" data-filter="hardware">Hardware</button>
+      <button class="filter-btn" data-filter="roofing">Roofing</button>
     </div>
 
-    <!-- Product Card 2 -->
-    <div class="product-card">
-      <img src="assets/images/product2.jpg" alt="Industrial Drill">
-      <div class="product-info">
-        <h3>Industrial Drill</h3>
-        <p>Durable and reliable drill for heavy-duty industrial and home projects. Built to last.</p>
-        <a href="#" class="btn">View Product</a>
-      </div>
+    <input
+      type="text"
+      id="productSearch"
+      placeholder="Search product name..."
+    />
+  </div>
+
+  <!-- PRODUCTS GRID -->
+  <div class="products-grid">
+
+    <!-- PRODUCT CARD -->
+    <div class="product-card" data-category="masonry" data-name="coffee bean mesh">
+      <img src="assets/images/coffee_bean_mesh.jfif" alt="Coffee Tray">
+      <p>Coffee Bean Tray<br>All sizes 1.2m*25m, G0.2mm, G1.2mm</p>
+      <a class="quote-btn" href="https://wa.me/256700000000?text=Hello,%20I%20would%20like%20a%20quote%20for%20Tororo%20Cement" target="_blank">
+        Request Quote
+      </a>
     </div>
 
-    <!-- Product Card 3 -->
-    <div class="product-card">
-      <img src="assets/images/product3.jpg" alt="Smartphone">
-      <div class="product-info">
-        <h3>Smartphone</h3>
-        <p>Latest-generation smartphone with excellent camera, battery life, and performance.</p>
-        <a href="#" class="btn">View Product</a>
-      </div>
+    <div class="product-card" data-category="masonry" data-name="Metro cement">
+      <img src="assets/images/metro_cement.jfif" alt="metro cement">
+      <p>Metro Cement<br>all types like pozzolanic cement 32.5N, portland Limestone Cement 42.5N</p>
+      <a class="quote-btn" href="https://wa.me/256700000000?text=Hello,%20I%20would%20like%20a%20quote%20for%20Hima%20Cement" target="_blank">
+        Request Quote
+      </a>
     </div>
 
-    <!-- Product Card 4 -->
-    <div class="product-card">
-      <img src="assets/images/product4.jpg" alt="Office Chair">
-      <div class="product-info">
-        <h3>Office Chair</h3>
-        <p>Ergonomic office chair designed for comfort and productivity, with adjustable height and lumbar support.</p>
-        <a href="#" class="btn">View Product</a>
-      </div>
+    <div class="product-card" data-category="steel" data-name="BRC mesh">
+      <img src="assets/images/brc_mesh.jfif" alt="BRC Mesh">
+      <p>BRC mesh<br>all guages and lenght 38m, 48m,</p>
+      <a class="quote-btn" href="https://wa.me/256700000000?text=Hello,%20I%20would%20like%20a%20quote%20for%20MS%20Plates" target="_blank">
+        Request Quote
+      </a>
     </div>
 
-    <!-- Add more product cards as needed -->
-  </section>
-
-  <!-- Optional Featured Products Slider -->
-  <section class="featured-products">
-    <h2>Featured Products</h2>
-    <div class="featured-slider">
-      <!-- Slider items (images or product cards) -->
+    <div class="product-card" data-category="hardware" data-name="steel">
+      <img src="assets/images/c_section.jpeg" alt="c channels">
+      <p>C Channels<br>standard length and size</p>
+      <a class="quote-btn" href="https://wa.me/256700000000?text=Hello,%20I%20would%20like%20a%20quote%20for%20Nails" target="_blank">
+        Request Quote
+      </a>
     </div>
-  </section>
 
-  <!-- Call to Action -->
-  <section class="products-cta">
-    <h2>Looking for more products?</h2>
-    <p>Contact us to get the full catalog and pricing.</p>
-    <a href="contact.html" class="btn">Contact Us</a>
-  </section>
-</main>
+    <div class="product-card" data-category="hardware" data-name="wheel barrows">
+      <img src="assets/images/wheel_barrow.jfif" alt="wheel barrow">
+      <p>Wheel Barrows<br>standard quality brands,sizes </p>
+      <a class="quote-btn" href="https://wa.me/256700000000?text=Hello,%20I%20would%20like%20a%20quote%20for%20Nails" target="_blank">
+        Request Quote
+      </a>
+    </div>
+
+    <!-- TORORO CEMENT -->
+    <div class="product-card" data-category="masonry" data-name="Tororo Cement">
+      <img src="assets/images/tororo_cement.jpeg" alt="Tororo Cement">
+      <p>
+        Tororo Cement<br>
+        Blue CEM I 42.5 N, Purple CEM II A(P) 32.5 N, Black CEM II B(P) 32.5 N, Red CEM IV B(P) 32.5 N
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+    <!-- HIMA CEMENT -->
+    <div class="product-card" data-category="masonry" data-name="Hima Cement">
+      <img src="assets/images/hima_cement.webp" alt="Hima Cement">
+      <p>
+        Hima Cement<br>
+        Fundi MC 22.5 X, PowerCrete CEM I 52.5 N, PowerPlus CEM I 42.5 N, PowerMax CEM II 42.5 N, MultiPurpose CEM IV 32.5 N
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+    <!-- SIMBA CEMENT -->
+    <div class="product-card" data-category="masonry" data-name="Simba Cement">
+      <img src="assets/images/simba_cement.webp" alt="Simba Cement">
+      <p>
+        Simba Cement<br>
+        SimbaPower CEM I 42.5 N, SimbaCement 32.5 N CEM II/B-P, SimbaCement 32.5 R CEM IV/B-P
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+    <!-- BUILDING LIME -->
+    <div class="product-card" data-category="masonry" data-name="Building Lime">
+      <img src="assets/images/building_lime.jpeg" alt="Building Lime">
+      <p>
+        Building Lime<br>
+        Tororo Lime, Hima Lime, Qualitas Lime and other imported brands
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+    <!-- BARBED WIRE -->
+    <div class="product-card" data-category="hardware" data-name="Barbed Wire">
+      <img src="assets/images/barbed_wires.jfif" alt="Barbed Wire">
+      <p>
+        Barbed Wire<br>
+        All brands, types and gauges: G12.5, G14, G15.5/16
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+    <!-- ALU-ZINC IRON SHEETS -->
+    <div class="product-card" data-category="roofing" data-name="Alu-Zinc Iron Sheets">
+      <img src="assets/images/normal_sheets.jpeg" alt="Alu-Zinc Iron Sheets">
+      <p>
+        Alu-Zinc Iron Sheets<br>
+        All brands, gauges: 32, 30, 28, 26
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+    <!-- PRE-PAINTED SHEETS -->
+    <div class="product-card" data-category="roofing" data-name="Pre-Painted Color Sheets">
+      <img src="assets/images/painted_sheets.jpeg" alt="Pre-Painted Color Sheets">
+      <p>
+        Pre-Painted Color Sheets<br>
+        All brands, gauges: 32, 30, 28, 26
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+    <!-- NAILS -->
+    <div class="product-card" data-category="hardware" data-name="Nails">
+      <img src="assets/images/nails_g.jpeg" alt="Nails">
+      <p>
+        Nails<br>
+        Sizes: 1", 2", 2.5", 3", 4", 5", 6"
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+     <div class="product-card" data-category="hardware" data-name="spade">
+      <img src="assets/images/spade.jfif" alt="spade">
+      <p>
+        Nails<br>
+        All brands, types and sizes.
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+     <div class="product-card" data-category="hardware" data-name="Hoe">
+      <img src="assets/images/hoe.jfif" alt="Hoe">
+      <p>
+        Garden Hoes<br>
+        all brands and sizes"
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+     <div class="product-card" data-category="hardware" data-name="Nails">
+      <img src="assets/images/roofing_nails.jfif" alt="Nails">
+      <p>
+         Roofing Nails<br>
+        all brands and types
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+
+    <!-- MS PLATES -->
+    <div class="product-card" data-category="steel" data-name="MS Plates">
+      <img src="assets/images/ms_plates.jpeg" alt="MS Plates">
+      <p>
+        MS Plates<br>
+        Thicknesses: 0.8mm, 1.2mm, 1.6mm, 2.0mm, 2.5mm, 3mm, 5mm, 6mm
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+    <div class="product-card" data-category="steel" data-name="MS Plates">
+      <img src="assets/images/checkerd_msplates.jpeg" alt="MS Plates">
+      <p>
+       Chequered Plates<br>
+        Thicknesses: 0.8mm, 1.2mm, 1.6mm, 2.0mm, 2.5mm, 3mm, 5mm, 6mm
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+
+    <!-- WELDED MESH -->
+    <div class="product-card" data-category="steel" data-name="Welded Mesh">
+      <img src="assets/images/welded_mesh.jpeg" alt="Welded Mesh">
+      <p>
+        Welded Mesh<br>
+        Sizes: 1/2”×1/2”, 1”×1”, 2”×2”, 3”×1/2” — Gauges 6G–22G
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+    <!-- BINDING WIRE -->
+    <div class="product-card" data-category="steel" data-name="Binding Wire">
+      <img src="assets/images/rools_binding_wire.jpeg" alt="Binding Wire">
+      <p>
+        Binding Wire (Rolls)<br>
+        Gauges: 16–22 SWG, Weights: 25kg & 40kg
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+    <div class="product-card" data-category="steel" data-name="Hoop Iron">
+      <img src="assets/images/hoop_iron.jfif" alt="Hoop Iron">
+      <p>
+        Hoop Iron (Rolls)<br>
+        all brands and sizes 16–22 SWG, Weights: 25kg & 40kg
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+    <!-- ROUND PIPES -->
+    <div class="product-card" data-category="steel" data-name="Round Pipes">
+      <img src="assets/images/metal_tubes.png" alt="Round Pipes">
+      <p>
+        Round Pipes<br>
+        All brands, types and sizes
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+  </div>
+</section>
+
+  <!-- LOAD MORE -->
+  <div class="load-more-wrapper">
+    <button id="loadMoreProducts">Load More</button>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+const products = [...document.querySelectorAll('.product-card')];
+const loadMoreBtn = document.getElementById('loadMoreProducts');
+const filterButtons = document.querySelectorAll('.filter-btn');
+const searchInput = document.getElementById('productSearch');
+
+let visibleCount = 0;
+let activeFilter = 'all';
+let searchTerm = '';
+
+function isMobile() {
+  return window.innerWidth <= 768;
+}
+
+function baseVisibleCount() {
+  return isMobile() ? 6 : 16;
+}
+
+function loadIncrement() {
+  return isMobile() ? 6 : 8;
+}
+
+function filteredProducts() {
+  return products.filter(p => {
+    const matchesFilter =
+      activeFilter === 'all' || p.dataset.category === activeFilter;
+    const matchesSearch =
+      p.dataset.name.toLowerCase().includes(searchTerm);
+    return matchesFilter && matchesSearch;
+  });
+}
+
+function renderProducts() {
+  const visibleProducts = filteredProducts();
+
+  products.forEach(p => p.classList.add('hidden'));
+
+  visibleProducts.slice(0, visibleCount).forEach(p => {
+    p.classList.remove('hidden');
+    p.style.animation = 'none';
+    p.offsetHeight;
+    p.style.animation = '';
+  });
+
+  loadMoreBtn.style.display =
+    visibleCount < visibleProducts.length ? 'inline-block' : 'none';
+}
+
+/* FILTER */
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    visibleCount = baseVisibleCount();
+    renderProducts();
+  });
+});
+
+/* SEARCH */
+searchInput.addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase();
+  visibleCount = baseVisibleCount();
+  renderProducts();
+});
+
+/* LOAD MORE */
+loadMoreBtn.addEventListener('click', () => {
+  visibleCount += loadIncrement();
+  renderProducts();
+});
+
+/* RESIZE */
+window.addEventListener('resize', () => {
+  visibleCount = baseVisibleCount();
+  renderProducts();
+});
+
+/* INIT */
+visibleCount = baseVisibleCount();
+renderProducts();
+
+
+const whatsappNumber = "256700000000";
+
+document.querySelectorAll('.quote-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const card = button.closest('.product-card');
+
+    const productName = card.dataset.name;
+    const productSize = card.dataset.size;
+
+    const message = `
+Hello Alokah Ventures,
+
+I would like a quote for the following product:
+
+Product: ${productName}
+Specification / Size: ${productSize}
+
+Kindly advise on price and availability.
+`.trim();
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappURL, '_blank');
+  });
+});
+</script>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="main-footer">
+    <div class="container footer-grid">
+
+        <!-- COMPANY INFO -->
+        <div class="footer-column">
+            <img src="assets/images/vansh_logo.png" alt="Vash Limited Logo" class="footer-logo">
+            <p>
+                Vash Limited is a trusted steel hardware vendor committed to quality,
+                reliability, and professional service delivery.
+            </p>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- LEGAL -->
+        <div class="footer-column">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- GOOGLE MAP -->
+        <div class="footer-column">
+            <h4>Our Location</h4>
+            <iframe 
+                src="https://www.google.com/maps?q=Kampala,Uganda&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 Vash Limited. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="assets/js/mobile.js"></script>
+
+</body>
+</html>
