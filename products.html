@@ -51,10 +51,12 @@
 <!-- ================= HEADER / NAVIGATION ================= -->
 <header class="main-header">
     <div class="container nav-container">
-       <div class="logo">
-    <img src="assets/images/vansh_logo.png" alt="Vansh Limited Logo">
-    <span class="logo-text">VANSH LIMITED</span>
-     </div>
+     <div class="logo">
+    <a href="index.html">
+        <img src="assets/images/vansh_logo.png" alt="Vansh Limited Logo">
+        <span class="logo-text">VANSH LIMITED</span>
+    </a>
+</div>
 
         <nav class="main-nav">
             <ul>
@@ -474,6 +476,16 @@
       <button class="quote-btn">Request Quote</button>
     </div>
 
+    <div class="product-card" data-category="hardware" data-name="kiveera">
+      <img src="assets/images/flats.jpeg" alt="Flat Bars">
+      <p>
+        Flat Bars<br>
+        All brands, types and sizes
+      </p>
+      <button class="quote-btn">Request Quote</button>
+    </div>
+
+
   </div>
 </section>
 
@@ -482,6 +494,26 @@
     <button id="loadMoreProducts">Load More</button>
   </div>
 
+</section>
+
+
+<!-- ================= CONTACT SECTION ================= -->
+<section class="contact-section">
+    <div class="container contact-container">
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p><strong>Email:</strong> info.vashagro@gmail.com</p>
+            <p><strong>Phone:</strong> +256 708678609 | +256 708678606</p>
+            <p><strong>Location:</strong> Mutebi road, Katwe, Kampala, Uganda & Kawempe</p>
+        </div>
+
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5"></textarea>
+            <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+    </div>
 </section>
 
 
@@ -538,118 +570,7 @@
     </div>
 </footer>
 
-
-
-<script>
-const products = [...document.querySelectorAll('.product-card')];
-const loadMoreBtn = document.getElementById('loadMoreProducts');
-const filterButtons = document.querySelectorAll('.filter-btn');
-const searchInput = document.getElementById('productSearch');
-
-let visibleCount = 0;
-let activeFilter = 'all';
-let searchTerm = '';
-
-function isMobile() {
-  return window.innerWidth <= 768;
-}
-
-function baseVisibleCount() {
-  return isMobile() ? 6 : 16;
-}
-
-function loadIncrement() {
-  return isMobile() ? 6 : 8;
-}
-
-function filteredProducts() {
-  return products.filter(p => {
-    const matchesFilter =
-      activeFilter === 'all' || p.dataset.category === activeFilter;
-    const matchesSearch =
-      p.dataset.name.toLowerCase().includes(searchTerm);
-    return matchesFilter && matchesSearch;
-  });
-}
-
-function renderProducts() {
-  const visibleProducts = filteredProducts();
-
-  products.forEach(p => p.classList.add('hidden'));
-
-  visibleProducts.slice(0, visibleCount).forEach(p => {
-    p.classList.remove('hidden');
-    p.style.animation = 'none';
-    p.offsetHeight;
-    p.style.animation = '';
-  });
-
-  loadMoreBtn.style.display =
-    visibleCount < visibleProducts.length ? 'inline-block' : 'none';
-}
-
-/* FILTER */
-filterButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterButtons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    activeFilter = btn.dataset.filter;
-    visibleCount = baseVisibleCount();
-    renderProducts();
-  });
-});
-
-/* SEARCH */
-searchInput.addEventListener('input', e => {
-  searchTerm = e.target.value.toLowerCase();
-  visibleCount = baseVisibleCount();
-  renderProducts();
-});
-
-/* LOAD MORE */
-loadMoreBtn.addEventListener('click', () => {
-  visibleCount += loadIncrement();
-  renderProducts();
-});
-
-/* RESIZE */
-window.addEventListener('resize', () => {
-  visibleCount = baseVisibleCount();
-  renderProducts();
-});
-
-/* INIT */
-visibleCount = baseVisibleCount();
-renderProducts();
-
-
-const whatsappNumber = "+256781898546";
-
-document.querySelectorAll('.quote-btn').forEach(button => {
-  button.addEventListener('click', () => {
-    const card = button.closest('.product-card');
-
-    const productName = card.dataset.name;
-    const productSize = card.dataset.size;
-
-    const message = `
-Hello Alokah Ventures,
-
-I would like a quote for the following product:
-
-Product: ${productName}
-Specification / Size: ${productSize}
-
-Kindly advise on price and availability.
-`.trim();
-
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-    window.open(whatsappURL, '_blank');
-  });
-});
-</script>
+<script src="assets/js/mobile.js"></script>
 
 </body>
 </html>

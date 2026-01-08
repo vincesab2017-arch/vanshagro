@@ -39,6 +39,22 @@ a {
     min-height: 100vh;  /* full viewport height */
 }
 
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1100;
+}
+
+.nav-toggle span {
+    width: 26px;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 2px;
+}
+
 /* =====================================================
    TYPOGRAPHY
 ===================================================== */
@@ -163,7 +179,7 @@ h4 { font-size: 18px; }
 /* ================= HERO BASE ================= */
 .hero-banner {
     position: relative;
-    min-height: 85vh;
+    min-height: 60vh;
     overflow: hidden;
     isolation: isolate;
 
@@ -809,44 +825,38 @@ h4 { font-size: 18px; }
 }
 
 /* =====================================================
-   RESPONSIVE NAVIGATION (GLASS MOBILE MENU)
+   MOBILE / TABLET DRAWER NAVIGATION
 ===================================================== */
-.nav-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-.nav-toggle span {
-    width: 26px;
-    height: 3px;
-    background: #ffffff;
-    border-radius: 2px;
-    transition: 0.3s ease;
-}
-
-/* Mobile & Tablet Nav */
 @media (max-width: 900px) {
 
     .nav-toggle {
-        display: flex;
+        display: flex !important ;
     }
 
     .main-nav {
         position: fixed;
-        inset: 0;
-        background: rgba(11, 44, 77, 0.85);
+        top: 0;
+        left: 0;
+        height: 100vh;
+
+        width: 80%;
+        max-width: 340px;
+
+        background: rgba(11, 44, 77, 0.94);
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
 
         display: flex;
-        align-items: center;
-        justify-content: center;
+        align-items: flex-start;
+        justify-content: flex-start;
 
-        transform: translateX(100%);
+        padding: 90px 24px 24px;
+
+        transform: translateX(-100%);
         transition: transform 0.4s ease;
+
+        box-shadow: 4px 0 24px rgba(0, 0, 0, 0.35);
+
         z-index: 1000;
     }
 
@@ -855,89 +865,54 @@ h4 { font-size: 18px; }
     }
 
     .main-nav ul {
+        display: flex;
         flex-direction: column;
-        gap: 28px;
-        text-align: center;
+        gap: 22px;
+        width: 100%;
     }
 
+    /* Fade-in animation */
+    .main-nav li {
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: all 0.3s ease;
+    }
+
+    .main-nav.active li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .main-nav.active li:nth-child(1) { transition-delay: 0.05s; }
+    .main-nav.active li:nth-child(2) { transition-delay: 0.1s; }
+    .main-nav.active li:nth-child(3) { transition-delay: 0.15s; }
+    .main-nav.active li:nth-child(4) { transition-delay: 0.2s; }
+    .main-nav.active li:nth-child(5) { transition-delay: 0.25s; }
+
     .main-nav a {
-        font-size: 1.2rem;
+        display: block;
+        width: 100%;
+        font-size: 1.1rem;
+        text-align: left;
     }
 
     .nav-btn {
-        padding: 12px 30px;
-        border-radius: 6px;
-    }
-}
-
-/* =====================================================
-   TABLET RESPONSIVENESS
-===================================================== */
-@media (min-width: 600px) and (max-width: 991px) {
-
-    h1 { font-size: 34px; }
-    h2 { font-size: 26px; }
-    h3 { font-size: 22px; }
-
-    .about-container,
-    .contact-container {
-        gap: 30px;
-    }
-
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* =====================================================
-   MOBILE RESPONSIVENESS
-===================================================== */
-@media (max-width: 599px) {
-
-    h1 { font-size: 30px; }
-    h2 { font-size: 24px; }
-    h3 { font-size: 20px; }
-
-    .container {
-        width: 92%;
-    }
-
-    .hero-actions {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .hero-actions a {
         width: 100%;
         text-align: center;
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section-header {
-        text-align: center;
-        margin: 0 auto 50px;
-    }
-
-    .divider {
-        margin-left: auto;
-        margin-right: auto;
+        margin-top: 14px;
     }
 }
 
-/* Toggle animation */
-.nav-toggle.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+/* Smaller phones */
+@media (max-width: 480px) {
+    .main-nav {
+        width: 85%;
+    }
 }
 
-.nav-toggle.open span:nth-child(2) {
-    opacity: 0;
-}
-
-.nav-toggle.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+/* Prevent background scroll */
+body.nav-open {
+    overflow: hidden;
 }
 
 
@@ -949,7 +924,7 @@ produts.html
 ===================================================== */
 .video-hero {
     position: relative;
-    height: 90vh;
+    height: 60vh;
     overflow: hidden;
     display: flex;
     align-items: center;
