@@ -983,6 +983,38 @@ produts.html
     gap: 15px;
 }
 
+/* Bottom-left download button */
+.hero-download {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    z-index: 4;
+
+    padding: 8px 14px;
+    font-size: 13px;
+    color: #C9A24D;
+    border: 1px solid #C9A24D;
+    border-radius: 4px;
+    text-decoration: none;
+    background: rgba(11, 44, 77, 0.75);
+    backdrop-filter: blur(4px);
+
+    transition: all 0.3s ease;
+}
+
+.hero-download:hover {
+    background: #C9A24D;
+    color: #0B2C4D;
+}
+@media (max-width: 768px) {
+    .hero-download {
+        bottom: 15px;
+        left: 15px;
+        font-size: 12px;
+        padding: 7px 12px;
+    }
+}
+
 /* =====================================================
    SCROLL DOWN INDICATOR
 ===================================================== */
