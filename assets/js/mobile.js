@@ -206,32 +206,36 @@ document.addEventListener("DOMContentLoaded", () => {
         visibleCount = baseVisibleCount();
         renderProducts();
 
-        // WHATSAPP QUOTE BUTTON
-        const whatsappNumber = "+256781898546";
-        document.querySelectorAll('.quote-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const card = button.closest('.product-card');
-                const productName = card.dataset.name;
-                const productSize = card.dataset.size;
 
-                const message = `
-Hello Alokah Ventures,
+//whatsapp inquiry
+
+const whatsappNumber = "256781898546";
+
+document.querySelectorAll('.quote-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const card = button.closest('.product-card');
+    if (!card) return;
+
+    const productName = card.dataset.name || "N/A";
+    const productSize = card.dataset.size || "N/A";
+
+    const message = `
+Hello Vansh Limited,
 
 I would like a quote for the following product:
 
 Product: ${productName}
 Specification / Size: ${productSize}
+Quantity needed:
 
 Kindly advise on price and availability.
-                `.trim();
+    `.trim();
 
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-                window.open(whatsappURL, '_blank');
-            });
-        });
-    }
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
+    window.open(whatsappURL, '_blank');
+  });
 });
 
 //about college animation

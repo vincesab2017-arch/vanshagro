@@ -438,8 +438,8 @@ h4 { font-size: 18px; }
 /* Small circles */
 .collage-small {
     position: absolute;
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid rgba(255,255,255,0.85);
@@ -566,7 +566,7 @@ h4 { font-size: 18px; }
     /* Supporting circles (balanced) */
     .collage-one {
         top: 25px;
-        left: 10%;
+        left: 16%;
         width: 110px;
         height: 110px;
     }
