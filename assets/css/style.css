@@ -1643,6 +1643,174 @@ body.nav-open {
   border-radius: 5px;
 }
 
+/* ==============================
+   PRODUCTS PAGE - MOBILE FIRST
+   ============================== */
+
+.products-page {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0 15px; /* small horizontal padding */
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+/* Page title */
+.products-page-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* -------- CONTROLS: FILTER + SEARCH -------- */
+.products-controls {
+  display: flex;
+  flex-direction: column; /* stack filters + search bar on mobile */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* FILTER BUTTONS */
+.filters {
+  display: flex;
+  flex-wrap: wrap; /* allow wrapping if needed */
+  gap: 5px;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+
+.filters .filter-btn {
+  flex: 0 1 auto; /* shrink if needed, grow as needed */
+  min-width: 60px; /* prevent too small buttons */
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #007BFF;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #007BFF;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filters .filter-btn.active,
+.filters .filter-btn:hover {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+/* SEARCH BAR */
+#productSearch {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* -------- PRODUCTS GRID -------- */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards per row on small screens */
+  gap: 15px;
+  width: 100%;
+}
+
+/* PRODUCT CARD */
+.product-card {
+  box-sizing: border-box; /* include padding/border in width */
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.product-card p {
+  padding: 10px;
+  margin: 0;
+  font-size: 14px;
+  word-break: break-word; /* prevent text overflow */
+}
+
+.product-card .quote-btn {
+  margin: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+/* -------- LOAD MORE BUTTON -------- */
+.load-more-wrapper {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.load-more-wrapper button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ==============================
+   MEDIA QUERIES - TABLET + DESKTOP
+   ============================== */
+
+/* Very small screens: 1 card per row */
+@media (max-width: 400px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Medium screens: 2 cards per row (already default), adjust if needed */
+@media (min-width: 401px) and (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Larger screens: 3-4 cards per row */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Filters + search in one line on desktop */
+  .products-controls {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #productSearch {
+    width: 250px; /* smaller width for desktop */
+  }
+}
+
 /* Very small screens (e.g., <400px) */
 @media (max-width: 400px) {
   .products-grid {
