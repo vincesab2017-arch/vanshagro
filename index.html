@@ -53,16 +53,28 @@
 
 <!-- ================= VIDEO HERO ================= -->
 <section class="video-hero">
-    <video class="hero-video" autoplay muted loop playsinline>
+
+    <!-- Background Video (Desktop Only) -->
+    <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="assets/images/4.png"
+        aria-hidden="true"
+    >
         <source src="assets/videos/vansh_promo.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <div class="video-overlay"></div>
+    <!-- Overlay -->
+    <div class="video-overlay" aria-hidden="true"></div>
 
     <!-- CONTENT -->
     <div class="hero-glass reveal">
-        <h1>Vansh Limited Steel & Hardware Solutions</h1>
+        <h1>Vansh Limited Steel &amp; Hardware Solutions</h1>
         <p>
             Vansh Limited is a premier distributor of high-grade steel and industrial hardware products.
             Partnering with us means securing world-class steel solutions for your demanding projects.
@@ -74,18 +86,27 @@
         </div>
     </div>
 
-    <!-- Bottom-left download button -->
-    <a href="assets/docs/vansh_profile.pdf"
-       class="hero-download"
-       download>
-       ⬇ Company Profile.
+    <!-- Download Button -->
+    <a
+        href="assets/docs/vansh_profile.pdf"
+        class="hero-download"
+        download
+        aria-label="Download Vansh Limited Company Profile"
+    >
+        ⬇ Company Profile
     </a>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+        <span></span>
+    </div>
+
 </section>
 
-  
 <!-- ================= ABOUT  SECTION ================= -->
 <section class="about-section artistic-about">
     <div class="container about-container">
+
         <!-- Text Column -->
         <div class="about-text">
             <h2>About Vansh Limited</h2>
@@ -94,19 +115,35 @@
                 Vansh Limited is a professional vendor specializing in sourcing and
                 supplying steel hardware materials of all types. We focus on
                 reliability, quality assurance, and timely delivery to meet the
-                demands of modern projects. we are located at Mutebi Road Katwe & 
-                at Kawempe Bwaise Kampala Uganda.
-
+                demands of modern projects. We are located at Mutebi Road Katwe &
+                Kawempe Bwaise, Kampala – Uganda.
             </p>
         </div>
 
-        <!-- Image Column -->
-        <div class="about-image">
-            <img src="assets/images/mesh_welded.jfif" alt="Steel Hardware Materials">
+        <!-- Circular Photo Collage -->
+        <div class="about-collage" id="aboutCollage">
+
+            <div class="collage-main">
+                <img src="assets/images/g_wires.jfif" alt="Steel Materials">
+            </div>
+
+            <div class="collage-small collage-one">
+                <img src="assets/images/ribed_pipes.jfif" alt="">
+            </div>
+
+            <div class="collage-small collage-two">
+                <img src="assets/images/round_bars.jfif" alt="">
+            </div>
+
+            <div class="collage-small collage-three">
+                <img src="assets/images/nails_g.jpeg" alt="">
+            </div>
+
         </div>
     </div>
 </section>
 
+<section class="flash-sale-section">
 <!-- ================= PRODUCTS SECTION ================= -->
 <section class="products-section">
     <div class="container">
@@ -148,7 +185,7 @@
     </div>
 </section>
 
-
+</section>
 
 <section class="products-showcase">
     <div class="products-container">
@@ -156,11 +193,11 @@
         <!-- LEFT: PRODUCT IMAGES -->
         <div class="product-images">
             <div class="main-product">
-                <img src="assets/images/flat.png" alt="Main Product">
+                <img src="assets/images/barbed_wires.jfif" alt="Main Product">
             </div>
 
             <div class="side-product">
-                <img src="assets/images/steel_pipes.png" alt="Product Detail">
+                <img src="assets/images/welded_mesh.jpeg" alt="Product Detail">
             </div>
         </div>
 
@@ -263,6 +300,162 @@
   </div>
 </section>
 
+
+
+<section class="flash-sale-section">
+  <!-- HEADER -->
+  <div class="flash-header">
+    <div class="left">
+      <span class="icon"> </span>
+      <span></span>
+    </div>
+    <div class="center">
+      <span id="countdown">make orders</span>
+    </div>
+    <div class="right">
+      <a href="products.html">See All ›</a>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="products-wrapper">
+
+    <!-- PRODUCT CARD -->
+    <div class="product-card">
+      <span class="discount"></span>
+      <img src="assets/images/barbed_wires.jfif" alt="Barbed wires">
+      <h4>High quality barbed wire </h4>
+
+      <div class="price">
+        
+        <span class="old-price"></span>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" style="width: 70%;"></div>
+      </div>
+      <small></small>
+    </div>
+
+    <!-- PRODUCT CARD -->
+    <div class="product-card">
+      <img src="assets/images/checkerd_msplates.jpeg" alt="Roofing Sheets">
+      <h4>welded mesh</h4>
+
+      <div class="price">
+       
+        <span class="old-price"></span>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" style="width: 50%;"></div>
+      </div>
+      <small></small>
+    </div>
+
+    <!-- PRODUCT CARD -->
+    <div class="product-card">
+      <img src="assets/images/v_angles.jfif" alt="V-Angles">
+      <h4>V-Angle</h4>
+
+      <div class="price">
+       
+        <span class="old-price"></span>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" style="width: 50%;"></div>
+      </div>
+      <small></small>
+    </div>
+
+     <!-- PRODUCT CARD -->
+    <div class="product-card">
+      <img src="assets/images/whole_sections.jfif" alt="Whole Sections">
+      <h4>Whole section</h4>
+
+      <div class="price">
+       
+        <span class="old-price"></span>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" style="width: 50%;"></div>
+      </div>
+      <small></small>
+    </div>
+
+     <!-- PRODUCT CARD -->
+    <div class="product-card">
+      <img src="assets/images/t_angle.jfif" alt="T-Angle">
+      <h4>Hight quality T-Angles</h4>
+
+      <div class="price">
+       
+        <span class="old-price"></span>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" style="width: 50%;"></div>
+      </div>
+      <small></small>
+    </div>
+
+     <!-- PRODUCT CARD -->
+    <div class="product-card">
+      <img src="assets/images/square_pipes.jfif" alt="Whole Sections">
+      <h4>High quality square pipes</h4>
+
+      <div class="price">
+       
+        <span class="old-price"></span>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" style="width: 50%;"></div>
+      </div>
+      <small></small>
+    </div>
+
+     <!-- PRODUCT CARD -->
+    <div class="product-card">
+      <img src="assets/images/seka.jfif" alt="Barbed Wires">
+      <h4>Fence Barbed Wire</h4>
+
+      <div class="price">
+       
+        <span class="old-price"></span>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" style="width: 50%;"></div>
+      </div>
+      <small></small>
+    </div>
+
+     <!-- PRODUCT CARD -->
+    <div class="product-card">
+      <img src="assets/images/rools_binding_wire.jpeg" alt="Binding Wire">
+      <h4>Binding wires</h4>
+
+      <div class="price">
+       
+        <span class="old-price"></span>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" style="width: 50%;"></div>
+      </div>
+      <small></small>
+    </div>
+
+
+
+
+</section>
+
+
+
 <!-- SUPPLIERS / PARTNERS SLIDER -->      
 <div class="partners-slider">
      <h2 class="products-title">Our Suppliers</h2>
@@ -301,7 +494,7 @@
     </div>
 </div>
 
-
+<section class="flash-sale-section">
 <!-- ================= INDUSTRIES SECTION ================= -->
 <section class="industries-section">
     <div class="container">
@@ -316,9 +509,10 @@
         </div>
     </div>
 </section>
+</section>
 
 <!-- ================= CONTACT SECTION ================= -->
-<section class="contact-section">
+<section class="contact-section" id="contact">
     <div class="container contact-container">
         <div class="contact-info">
             <h2>Contact Us</h2>

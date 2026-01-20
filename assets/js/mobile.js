@@ -233,3 +233,34 @@ Kindly advise on price and availability.
     }
 
 });
+
+//about college animation
+    const collageImages = [
+        "assets/images/hoes_two.jfif",
+        "assets/images/normal_sheets.jpeg",
+        "assets/images/pick_hoe.jpg",
+        "assets/images/roofing_nails.jfif",
+        "assets/images/brc_mesh.jfif"
+    ];
+
+    const collage = document.getElementById("aboutCollage");
+    const images = collage.querySelectorAll("img");
+
+    let index = 0;
+
+    function rotateImages() {
+        images.forEach(img => {
+            img.style.opacity = "0";
+        });
+
+        setTimeout(() => {
+            images.forEach((img, i) => {
+                img.src = collageImages[(index + i) % collageImages.length];
+                img.style.opacity = "1";
+            });
+            index++;
+        }, 500);
+    }
+
+    setInterval(rotateImages, 4500);
+
