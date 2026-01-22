@@ -265,3 +265,4 @@ Kindly advise on price and availability.
 
     setInterval(rotateImages, 4500);
 
+

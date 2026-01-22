@@ -1,0 +1,154 @@
+:root{
+  --blue:#0b2c4d;
+  --gold:#f5b400;   /* bright accent */
+  --gray:#f4f6f8;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:#222;
+}
+
+/* NAV */
+.navbar{
+  display:flex;
+  gap:15px;
+  align-items:center;
+  padding:12px 6%;
+  background:#fff;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{height:40px}
+
+.nav-center input{
+  padding:8px;
+  width:100%;
+  max-width:320px;
+}
+
+.nav-right a{
+  margin-left:15px;
+  text-decoration:none;
+  color:var(--blue);
+  font-weight:600;
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:#000;
+  padding:8px 14px;
+  border-radius:6px;
+}
+
+/* HERO */
+.hero{
+  height:65vh;
+  background:linear-gradient(rgba(11,44,77,.7),rgba(11,44,77,.7)),
+  url(images/hero.jpg) center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+}
+
+.hero h1{font-size:2.6rem}
+
+/* TRUST */
+.trust{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  background:var(--blue);
+  color:white;
+  padding:15px;
+  text-align:center;
+}
+
+/* SECTIONS */
+.section{padding:60px 6%}
+.section.gray{background:var(--gray)}
+.center{text-align:center}
+
+.category-grid,
+.why-grid,
+.location-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+/* CATEGORY CARD */
+.category-card{
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  text-decoration:none;
+  color:#000;
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.category-card img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+}
+
+.category-card:hover{
+  transform:translateY(-6px);
+}
+
+/* WHY */
+.why-grid div{
+  background:var(--blue);
+  color:white;
+  padding:18px;
+  border-radius:8px;
+  text-align:center;
+}
+
+/* CTA */
+.cta{
+  background:var(--blue);
+  color:white;
+  padding:60px 6%;
+  text-align:center;
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  color:#bbb;
+  text-align:center;
+  padding:20px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  color:white;
+  font-size:26px;
+  padding:14px;
+  border-radius:50%;
+  text-decoration:none;
+}
+
+/* ANIMATION */
+.animate{
+  opacity:0;
+  transform:translateY(30px);
+  transition:.8s;
+}
+
+.animate.show{
+  opacity:1;
+  transform:none;
+}
