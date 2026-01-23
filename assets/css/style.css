@@ -196,33 +196,6 @@ h4 { font-size: 18px; }
     padding: 24px;
 }
 
-/* ================= SLIDER ================= */
-.hero-slider {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-}
-
-.hero-slider .slide {
-    position: absolute;
-    inset: 0;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    opacity: 0;
-    transform: scale(1.15);
-    transition:
-        opacity 1.2s ease-in-out,
-        transform 6s ease-in-out;
-}
-
-.hero-slider .slide.active {
-    opacity: 1;
-    transform: scale(1);
-}
-
 /* ================= OVERLAY (MOBILE READABILITY) ================= */
 .hero-banner::before {
     content: "";
@@ -471,6 +444,41 @@ h4 { font-size: 18px; }
 .vansh-slider-dots .active {
   background: #0073e6;
 }
+
+/* IMAGE SLIDES */
+.vansh-hero-slides {
+  position: absolute;
+  inset: 0;
+}
+
+.vansh-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.vansh-hero-bg.active {
+  opacity: 1;
+}
+
+/* TEXT ABOVE IMAGES */
+.vansh-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* DARK OVERLAY */
+.vansh-hero-slider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+}
+
 
 /* PROMOS */
 .vansh-promo-row {
@@ -2293,5 +2301,128 @@ small {
 
   .product-card h4 {
     font-size: 13px;
+  }
+}
+
+
+
+/* ===============================
+   VANSH HARDWARE LOCATIONS
+================================ */
+
+.vansh-locations {
+  padding: 70px 15px;
+  background: #f6f8fc;
+}
+
+.vansh-locations-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.vansh-section-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #1f1f1f;
+}
+
+.vansh-section-subtitle {
+  text-align: center;
+  color: #555;
+  margin-bottom: 50px;
+  font-size: 15px;
+}
+
+.vansh-location-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.vansh-location-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vansh-location-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+/* IMAGE */
+.vansh-location-image {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* CONTENT */
+.vansh-location-content {
+  padding: 25px;
+}
+
+.vansh-location-content h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #35358a;
+}
+
+.vansh-location-address {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.vansh-location-details {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.vansh-location-details li {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.vansh-location-details a {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+.vansh-location-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #ff6a00;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.vansh-location-btn:hover {
+  background: #e65c00;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .vansh-location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vansh-location-image {
+    height: 200px;
+  }
+
+  .vansh-section-title {
+    font-size: 26px;
   }
 }

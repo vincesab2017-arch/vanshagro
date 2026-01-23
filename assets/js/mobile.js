@@ -266,3 +266,48 @@ Kindly advise on price and availability.
     setInterval(rotateImages, 4500);
 
 
+/* =====================================================
+   VANSH HERO IMAGE LAYER SLIDER (ISOLATED & SAFE)
+   Works ONLY with:
+   .vansh-hero-slider > .vansh-hero-bg
+===================================================== */
+
+(function () {
+  const heroSlider = document.querySelector(".vansh-hero-slider");
+  if (!heroSlider) return; // do nothing if section not found
+
+  const slidesWrap = heroSlider.querySelector(".vansh-hero-slides");
+  const slides = slidesWrap?.querySelectorAll(".vansh-hero-bg");
+  const dots = heroSlider.querySelectorAll(".vansh-slider-dots span");
+
+  if (!slides || slides.length === 0) return;
+
+  let current = 0;
+  const INTERVAL = 5000;
+
+  function show(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+      if (dots[i]) dots[i].classList.toggle("active", i === index);
+    });
+    current = index;
+  }
+
+  function next() {
+    const nextIndex = (current + 1) % slides.length;
+    show(nextIndex);
+  }
+
+  // auto play
+  let timer = setInterval(next, INTERVAL);
+
+  // dots click
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      clearInterval(timer);
+      show(i);
+      timer = setInterval(next, INTERVAL);
+    });
+  });
+
+})();
