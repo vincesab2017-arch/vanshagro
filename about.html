@@ -30,10 +30,12 @@
 
 <!-- ================= HERO ================= -->
 <section class="hero">
+  <div class="hero-overlay"></div>
+
   <div class="hero-text animate">
     <h1>Reliable Steel & Hardware Solutions</h1>
     <p>Supplying quality construction materials across Uganda</p>
-    <a href="#categories" class="btn-gold">Browse Categories</a>
+    <a href="products.html" class="btn-gold">Browse Categories</a>
   </div>
 </section>
 
@@ -45,101 +47,281 @@
   <div>✔ Multiple Locations</div>
 </section>
 
-<!-- ================= ABOUT ================= -->
-<section class="section animate">
-  <h2>About Vansh Limited</h2>
-  <p class="center">
-    Vansh Agro (U) Ltd is one of Uganda’s reliable suppliers of steel, cement,
-    and hardware materials, serving contractors, institutions, and individuals.
-  </p>
-</section>
+  <style>
+    :root {
+      --primary: #f68b1e; /* Jumia-like accent */
+      --dark: #1f1f1f;
+      --light: #ffffff;
+      --muted: #f5f5f5;
+      --text: #333;
+    }
 
-<!-- ================= CATEGORIES ================= -->
-<section class="section gray" id="categories">
-  <h2>Product Categories</h2>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-  <div class="category-grid">
+    body {
+      background: var(--muted);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-    <a href="products.html?cat=steel" class="category-card animate">
-      <img src="assets/images/v_angles.jfif" alt="v-Angle">
-      <h3>Structural Steel</h3>
-    </a>
+    /* ====== PAGE WRAPPER ====== */
+    .about-wrapper {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem 4rem;
+    }
 
-    <a href="products.html?cat=roofing" class="category-card animate">
-      <img src="assets/images/t_angle.jfif" alt="">
-      <h3>Roofing Materials</h3>
-    </a>
+    /* ====== HERO ====== */
+    .about-hero {
+      background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url("../assets/images/5.png") center/cover no-repeat;
+      color: var(--light);
+      padding: 4rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+    }
 
-    <a href="products.html?cat=bars" class="category-card animate">
-      <img src="assets/images/welded_mesh.jpeg" alt="">
-      <h3>Steel Bars & Sections</h3>
-    </a>
+    .about-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
 
-    <a href="products.html?cat=cement" class="category-card animate">
-      <img src="assets/images/hoop_iron.jfif" alt="">
-      <h3>Cement & Consumables</h3>
-    </a>
+    .about-hero p {
+      max-width: 700px;
+      font-size: 1.05rem;
+    }
 
-    <a href="products.html?cat=wire" class="category-card animate">
-      <img src="assets/images/flat_bars.jpeg" alt="">
-      <h3>Wire & Mesh Products</h3>
-    </a>
+    /* ====== SECTION ====== */
+    .about-section {
+      background: var(--light);
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
 
-    <a href="products.html?cat=accessories" class="category-card animate">
-      <img src="assets/images/nails_g.jpeg" alt="">
-      <h3>Hardware Accessories</h3>
-    </a>
+    .about-section h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+    }
+
+    .about-section p {
+      margin-bottom: 1rem;
+      font-size: .95rem;
+    }
+
+    /* ====== GRID BLOCK (JUMIA STYLE) ====== */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .info-card {
+      background: var(--muted);
+      padding: 1.8rem 1.5rem;
+      border-radius: 10px;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
+
+    .info-card h3 {
+      margin-bottom: .7rem;
+      font-size: 1.1rem;
+      color: var(--dark);
+    }
+
+    .info-card p {
+      font-size: .9rem;
+    }
+
+    /* ====== VALUES ====== */
+    .values-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .value-item {
+      background: #fff7ef;
+      border-left: 4px solid var(--primary);
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 900px) {
+      .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .values-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .about-hero h1 {
+        font-size: 2rem;
+      }
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-section {
+        padding: 2rem 1.3rem;
+      }
+    }
+  </style>
+
+  <div class="about-wrapper">
+
+  
+
+    <!-- WHO WE ARE -->
+    <section class="about-section">
+      <h2>Who We Are</h2>
+      <p>
+        Vansh Limited is a Ugandan-based hardware and supply company focused on delivering dependable products
+        for construction, renovation, and industrial use.
+      </p>
+      <p>
+        Inspired by modern e-commerce leaders like Jumia, we combine strong physical presence with
+        customer-first service and efficient supply chains.
+      </p>
+    </section>
+
+    <!-- WHAT WE DO -->
+    <section class="about-section">
+      <h2>What We Do</h2>
+
+      <div class="info-grid">
+        <div class="info-card industry-card">
+          <div class="industry-img">
+            <img src="images/construction.jpg" alt="Construction Industry">
+          </div>
+          <h3>Construction & Real Estate</h3>
+          <p>Supplying cement, steel, fittings, and construction essentials for residential and commercial projects.</p>
+        </div>
+
+        <div class="info-card industry-card">
+          <div class="industry-img">
+            <img src="images/manufacturing.jpg" alt="Manufacturing Industry">
+          </div>
+          <h3>Manufacturing & Industrial</h3>
+          <p>Durable tools, equipment, and materials for factories and industrial operations.</p>
+        </div>
+
+        <div class="info-card industry-card">
+          <div class="industry-img">
+            <img src="images/retail.jpg" alt="Retail and Wholesale">
+          </div>
+          <h3>Retail & Wholesale Traders</h3>
+          <p>Bulk and retail supply solutions for shops, distributors, and resellers.</p>
+        </div>
+
+        <div class="info-card industry-card">
+          <div class="industry-img">
+            <img src="images/infrastructure.jpg" alt="Infrastructure Projects">
+          </div>
+          <h3>Infrastructure Projects</h3>
+          <p>Materials and logistics support for roads, utilities, and public infrastructure developments.</p>
+        </div>
+
+        <div class="info-card industry-card">
+          <div class="industry-img">
+            <img src="images/hospitality.jpg" alt="Hospitality and Commercial Facilities">
+          </div>
+          <h3>Hospitality & Commercial Facilities</h3>
+          <p>Reliable supply of maintenance and building materials for hotels, offices, and malls.</p>
+        </div>
+
+        <div class="info-card industry-card">
+          <div class="industry-img">
+            <img src="images/homebuilders.jpg" alt="Individual Home Builders">
+          </div>
+          <h3>Individual Home Builders</h3>
+          <p>Affordable, quality products for personal home construction and renovations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="about-section">
+      <h2>Why Choose Vansh Limited</h2>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Quality Assurance</h3>
+          <p>All products meet strict quality and durability standards.</p>
+        </div>
+        <div class="info-card">
+          <h3>Competitive Pricing</h3>
+          <p>Fair and transparent pricing for both small and bulk buyers.</p>
+        </div>
+        <div class="info-card">
+          <h3>Customer Support</h3>
+          <p>Friendly support team ready to guide you through every purchase.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="about-section">
+      <h2>Our Core Values</h2>
+      <div class="values-list">
+        <div class="value-item">Integrity and honesty in every transaction</div>
+        <div class="value-item">Commitment to customer satisfaction</div>
+        <div class="value-item">Consistency in quality and service</div>
+        <div class="value-item">Growth through innovation and teamwork</div>
+      </div>
+    </section>
+
+    <!-- INDUSTRIES WE SERVE -->
+    <section class="about-section">
+      <h2>Industries We Serve</h2>
+      <p>
+        Vansh Limited supports a wide range of industries with dependable hardware supplies and building materials,
+        tailored to meet different operational and project needs.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Construction & Real Estate</h3>
+          <p>Supplying cement, steel, fittings, and construction essentials for residential and commercial projects.</p>
+        </div>
+        <div class="info-card">
+          <h3>Manufacturing & Industrial</h3>
+          <p>Durable tools, equipment, and materials for factories and industrial operations.</p>
+        </div>
+        <div class="info-card">
+          <h3>Retail & Wholesale Traders</h3>
+          <p>Bulk and retail supply solutions for shops, distributors, and resellers.</p>
+        </div>
+        <div class="info-card">
+          <h3>Infrastructure Projects</h3>
+          <p>Materials and logistics support for roads, utilities, and public infrastructure developments.</p>
+        </div>
+        <div class="info-card">
+          <h3>Hospitality & Commercial Facilities</h3>
+          <p>Reliable supply of maintenance and building materials for hotels, offices, and malls.</p>
+        </div>
+        <div class="info-card">
+          <h3>Individual Home Builders</h3>
+          <p>Affordable, quality products for personal home construction and renovations.</p>
+        </div>
+      </div>
+    </section>
 
   </div>
-</section>
 
-<!-- ================= WHY US ================= -->
-<section class="section animate">
-  <h2>Why Choose Vansh Agro</h2>
-
-  <div class="why-grid">
-    <div>Reliable Supply Chain</div>
-    <div>Competitive Pricing</div>
-    <div>Professional Service</div>
-    <div>Quality Products</div>
-    <div>Experienced Team</div>
-    <div>Customer Focus</div>
-  </div>
-</section>
-
-<!-- ================= LOCATIONS ================= -->
-<section class="section gray" id="locations">
-  <h2>Our Locations</h2>
-
-  <div class="location-grid">
-    <div class="location-card animate">
-      <h4>Kawempe Branch</h4>
-      <p>Bombo Road, opposite A.S Energies</p>
-      <p>📞 +256 708 678 614</p>
-    </div>
-
-    <div class="location-card animate">
-      <h4>Head Office – Katwe</h4>
-      <p>Mutebi Road, adjacent to Hotel Hensek</p>
-      <p>📞 +256 708 678 610</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CTA ================= -->
-<section class="cta animate">
-  <h2>Build With a Partner You Can Trust</h2>
-  <p>Contact us today for quality hardware solutions.</p>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-  <p>© 2026 Vansh Agro (U) Ltd • Kampala, Uganda</p>
-</footer>
-
-<!-- ================= WHATSAPP ================= -->
-<a href="https://wa.me/256708678614" class="whatsapp" target="_blank">💬</a>
-
-<script src="script.js"></script>
 </body>
 </html>
